@@ -1,0 +1,4 @@
+USE mysql;
+UPDATE mysql.user SET authentication_string = PASSWORD('Azir08') WHERE User =  'root' and host = 'localhost';FLUSH PRIVELEGES;
+
+skip-grant-tables ........... on my.ini line 79
