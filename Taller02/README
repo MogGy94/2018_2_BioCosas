@@ -1,0 +1,442 @@
+INTRODUCCION A LA BIOLOGIA COMPUTACIONAL 
+
+
+Introducción Taller 2.
+
+
+
+----------------------------------------
+Construcción de scripts en shell
+-------------------------------------------------------------------------
+
+Antes de iniciar el taller, revice en la carpeta Data los archivos correspondientes.
+Diseñe por favor para ellos una combinación de linea de comandos para saber si existen
+secuencias de humano para los tres tipos de archivos y cuantas. 
+
+-------------------------------------------------------------------------------
+La idea general de un script de shell es concentrar en un solo archivo la
+ejecución de una serie de comandos de shell que permiten procesar pasos mas complejos de computo
+usando sintaxis mas avanzada de la shel
+
+Para ello entonces debemos introducir nuevos conceptos para escribir un programa corto 
+llamado script en lenguaje de shell.
+
+-----------------------------------------------
+
+Qué conceptos nuevos requiere? 
+
+
+1. Variables
+2. Estructuras de control, condicionales 
+
+
+-----------------------------------------------
+
+
+
+
+NOTA
+
+Para buena práctica en la escritura de un código debemos 
+
+
+----------------------------------------------------------------------------
+Comentar las lineas de ejecución anteponiendo el signo # para apoyarnos
+en la comprensión del código. Lo que está escrito en cada linea con este simbolo
+antepuesto no será interpretado como parte del código
+----------------------------------------------------------------------------
+
+
+''''''''''''''''''''''''''
+Estructura básica de un 
+script en shell
+'''''''''''''''''''''''''
+
+-----------------------------------------------------------------------------
+Primera linea indica donde se encuentra ubicado el compilador que se encarga
+de interpretar las ordenes  escrita en lenguaje shell en este caso al lenguaje 
+comprendido por la  máquina
+------------------------------------------------------------------------------
+
+
+
+#!/bin/bash   # Le indica al sistema que el archivo será ejecutando con la Bourne shell.
+              # ya que existen diferentes tipos de shell Bourne shell ( sh), Korn shell ( ksh) y
+              # Bourne Again shell ( bash) y POSIX shell ( sh). 
+	          # #! permite direccionar la búsqueda hacia el interprete o el compilador
+#---------------------------lineas de comandos--------------------------------------------
+
+
+
+#-----------------------------------------------------------------------
+# Las lineas siguiente corresponden al uso de comandos o afirmaciones que permitan ejecutar operaciones
+# Por ejemplo
+
+
+pwd
+ls
+echo "Hola a todos"
+------------------------------------------------------------------------------------------
+
+
+E   J   E   R   C   I   C   I   O
+
+
+#------------------Escriba su primer script en shell ------------------------------------
+
+Ubiquese en el directorio Code y en  el editor de textos gedit escriba
+#!/bin/bash
+pwd
+ls
+echo "Hola a todos"
+
+
+----------------------------------------------------------------------------------
+Guarde este archivo en gedit y llamelo ejemplo.sh
+---------------------------------------------------------------------------------
+
+Luego ejecute sobre la shell asi:
+
+bash ejemplo.sh
+
+--------------
+
+
+
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+En el siguiente paso revice un ejemplo diferente 
+ubicado en el directorio Code
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+--------------'''''''''''''''''''''''''''''''''''''''''''''
+Ahora abra 1a.sh en el editor gedit o utilize ç
+more para observar su contenido
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+----------------------------------''''''''''''''''''''''''''
+Ejercicio 1: permisos de ejecución 
+---------------------------------´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+Es necesario tener disponible un editor de texto para 
+escribir el código fuente a ejecutar. 
+
+Para ello el editor mas recomendado en vim. Sin embargo, usted en su proceso de aprendizaje 
+puede iniciar con un editor sencillo como gedit.
+
+
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+1.1 Retome el archivo ejemplo.sh 
+1.2 Asigne permisos de ejecución al archivo ejemplo.sh
+
+En la linea de comandos asi
+chmod u+x ejemplo.sh.sh
+
+1.3 Una vez con permisos de ejecución ejecute su script en la linea de comandos asi:
+./ejemplo.sh
+
+
+----------------------------------------------
+
+Uso de comandos echo y read para la impresión 
+y la lectura de datos respectivamente
+
+----------------------------------------------
+
+
+Cuando por primera vez utilizamos una variable en shell, 
+le asignamos un nombre y sus características, 
+lo que se conoce como declarar la variable. 
+(Existen reglas propias de cada lengujae para declarar variables).
+En shell la declaración es sencilla y los nombres no pueden corresponder 
+a palabras reservadas propias del lenguaje, 
+deben evitarse subrayados, espacios etc.). 
+Solo por facilidad y evitar confusiones entre los comandos y palabras 
+reservadas de shell es que las variables se declaran en MAYUSCULA. 
+
+Una vez declarada la variable se accede al valor asignado, cuando se antepono 
+el signo $ al nombre de la variable. 
+
+Ahora por ejemplo si queremos conocer el contenido en memoria de la variable usamos el comando echo, 
+que nos permite imprimir en la sálida estandar  STDOUT el valor que contiene la variable. 
+En el siguiente ejemplo también utilzaremos
+un nuevo comando "read". 
+ESte comando permite leer lo que se escribe en la linea de comandos como argumento.
+Por ejemplo si crean en ejemplo2.sh con este código y lo ejecutan, 
+observan que en la linea de comandos se espera un argumento, en este caso responder 
+a la  pregunta Cual es su nombre de usuario?
+
+
+
+-------Code 02 ---------------------------
+#!/bin/bash
+
+echo "Cual es su nombre de usuario?"  
+read USUARIO
+echo "Hello, $USUARIO"
+
+-----End Code 02--------------------------
+
+
+-------------------------------------------
+Ejercicio 03
+Declaración de la variables en shell
+--------------------------------------------
+
+
+VARIABLE=Valor que toma la variable. Puede ser números, letras etc. Debe siempre estar
+seguida del signo = SIN ESPACIO. Y por conveción en shell mejor en Mayúsculas.
+Se tiene acceso al valor que contiene la variable usando el signo $.
+
+------Code 03 ---------------
+
+#!/bin/bash
+# Mi script para asignar valores a mis variables
+VAR_1=Hola
+VAR_2=Bioinf
+
+echo "$VAR_1 $VAR_2" 
+
+-------End Code 03 -----------
+
+NOTA USO DE COMILLAS EN SHELL
+
+Existen 3 tipos de comillas. Dobles y sencillas (" ") y ('') y las comillas invertidas (`)
+1. La doble: permite imprimir y evaluar las variables. 
+2. La comilla simple ('') sirve para imprimir literalmente el contenido 
+
+Veamos esto en el siguiente ejemplo:
+
+        x=100
+        y='500$x'
+        echo $y         # Esto enseñará `500$x' en pantalla
+        y="500$x"
+        echo $y         # Esto enseñará `500100' en pantalla
+
+Las que quedan son las comillas invertidas (`) con órdenes y su sálida puede ser almacenada de nuevo a una nueva variable
+
+         archivos=`ls | wc -l`
+         echo $archivos
+
+
+
+########################################################
+Ejercicio 04
+########################################################
+
+Es importante conocer que los argumentos escritos desde 
+la linea de comandos son reconocidos por el 
+interprete de shell  y se asignan por default unas variables 
+reservadas de la shell que se
+enumeran asi  $1 ... $9.
+
+
+Ejemplo:
+En el siguiente script en shell que llamaremos code.sh veremos la importancia de las variables reservadas $1 .. $9.
+
+--------------------code.sh----------------------------------------------------
+
+#!/bin/bash
+# This program will print the head and tail of a file
+# passed in on the command line.
+
+echo "Printing head of $1..."
+head $1
+
+echo ""  #this prints an extra return...
+echo "Printing tail of $2 ..."
+tail $2 
+
+------code.sh --------
+
+code.sh ../Data/ala.fasta ../Data/his.fasta
+
+-------------------------- Otro ejemplo del uso de la Función read ---------------------------------
+
+
+''''''''''read.sh''''''''''''''''''''''''''''''''''''''''''''
+#!/bin/bash
+# This program will read the filename from user input.
+
+echo "Enter the file: "
+read FILENAME
+echo "Printing head of $FILENAME..."
+head $FILENAME
+
+echo ""  #this prints an extra return...
+echo "Printing tail of $FILENAME..."  
+tail $FILENAME > ../Results/cys.out
+
+
+
+´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+sh read.sh
+-------------------------------------------------------------------------------------
+
+
+
+------------------------Uso de estructuras de control -------------------------------
+SINTAXIS IF : Revizar codigos disponibles en el directorio IF
+-------------------------------------------------------------------------------------
+
+if [ condicion ] then
+fi
+
+
+
+-----------------------------------------------------------------------
+SINTAXIS IF/ELSE
+-----------------------------------------------------------------------
+
+ if [ condicion ]         
+ then              
+                ...                                    
+ else                                   # Se puede reemplazar else if por  elif [ condicion2 ]
+     if [ condicion2 ]                  
+ then                                              
+               ...                       
+     fi
+ fi
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+ejemplo en Code/if/3a.sh 
+-------------------------------------------------------------------------
+
+
+SINTAXIS WHILE
+------------------------------------------------------------------------
+while orden
+        do
+                ...
+        done
+-------------------------------------------------------------------------
+
+
+SINTAXIS FOR CAS01 : Revizar ejemplos disponibles en el directorio for
+
+
+------------------------------------------------------------------------
+Metodo: Usando "in" y una lista de valores
+--------------------------------------------------------------------------
+
+for varname in list
+do
+ command1
+ command2
+ ..
+done
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+En este caso list puede ser por ejemplo una variable que contiene una lista 
+
+-------------------------------------------
+Ejemplo
+-------------------------------------------
+
+
+i=1
+for day in Mon Tue Wed Thu Fri
+ do
+      echo "Weekday $((i++)) : $day"
+ done
+
+--------------------------------------------
+Que se imprime como Salida
+---------------------------------------------
+Weekday 1 : Mon
+Weekday 2 : Tue
+Weekday 3 : Wed
+Weekday 4 : Thu
+Weekday 5 : Fri
+
+La lista de valores no debe ser separada por comas como en otros lenguajes 
+Si se escribe (Mon, Tue, Wed, Thu, Fri) la coma será tratada como parte del 
+valor de la lista
+
+--------------------------------------------------
+Revizar los ejemplos en code 1b.sh y 1c.sh y for/forls/2c.sh
+--------------------------------------------------
+
+
+
+''''''''''''''''''''''''''''
+SINTAXIS FOR CASO 2:
+
+
+-------------------------------------------------
+Metodo: si la lista no de declara en el código, el interprete espera que 
+se escriba desde la linea de comandos
+-------------------------------------------------
+
+i=1
+
+for day
+    do
+    echo "Weekday $((i++)) : $day"
+done
+
+------------------------------------------------
+Que se espera para 
+codesinlista.sh 
+
+
+
+La lista ingresada desde la linea de comandos
+es decir 
+
+
+codelista.sh Mon Tue Wed Thu Fri
+
+-------------------------------------------------
+
+
+-------------------------------------------------------------------------
+SINTAXIS FOR CASO 3
+------------------------------------------------------------------------
+Metodo: En este caso la lista se asigna primero a una variable y posteriormente 
+se accede a cada elemento de la lista por medio de otra variable que lee la lista
+--------------------------------------------------------------------------------
+
+i=1
+weekdays="Mon Tue Wed Thu Fri"
+
+for day in $weekdays
+     do
+          echo "Weekday $((i++)) : $day"
+     done
+
+------------------------------------------------
+Que se imprime en la salida
+------------------------------------------------
+Weekday 1 : Mon
+Weekday 2 : Tue
+Weekday 3 : Wed
+Weekday 4 : Thu
+Weekday 5 : Fri
+
+----------------------------------------
+
+SINTAXIS FOR CASO 4
+------------------------------------------------------------------------
+Metodo: Estilo C
+--------------------------------------------------------------------------
+
+for (( i=1; i <= 5; i++ ))
+do
+ echo "Random number $i: $RANDOM"
+done
+
+-------------------------------------------
+Revize los códigos mas avanzados en los directorios
+for, manyif, if y operaciones
+---------------------------------------------
+
+
+
+Del siguiente ejemplo que puede observar? Escribalo en la linea de comando y como script de shell
+
+for i in `cut -d, -f2 Data/genetic_code.txt | sort | uniq -u `; do grep $i Data/genetic_code.txt; done

@@ -1,0 +1,59 @@
+comparadaor de CDPs en trascritos asociados al metabolismo glicolitico() de procariotas
+
+
+Organismo 	()-->raton las 
+	nombre comun numermID(autoincremean) PK		
+	nombre comun
+	nombre cientifico
+	cepa
+	dominio
+
+Gen	(Gen *----1 Org)(Gen 1----* Tran)
+	nombre(Proteina) , numero (autoincremental) PK
+ 	secuencia Nucleotidos(ADN)
+	ubicacion en el genoma
+	version de genoma
+
+Transcrito	() -->(Tran ?----1 Gen)(Tran 1---1 Prot)
+	
+	nombreCientifico , numero (autoincremental) PK
+	secuencia Nucleotidos(ARN)	
+	CDP(lo q se traduce)
+		
+	
+Proteina 	(Pro 1 --t-- 1 Sec)-->
+	nombre PK
+	funcion
+	secuencia
+	tamaño 
+	ruta metabolica
+
+
+Secuencia (Sec 1--- * Form)
+	number (aut)	
+	aminoaciodos PK
+	polaridad
+	carga
+	tamaño
+forma	
+	nombre PK	
+	CDP
+	funcion.........
+
+COM_transcritos (trans 1 --- * trans)
+	TRasnA-TrasncB PK
+	....procentages de similitud entre transcritos
+	..numero de aciertos 
+	.... numero de gaps
+com_proteinas (prot 1 --- * prot)
+	ProtA-ProtB PK
+	....procentages de similitud entre proteinas
+	..numero de aciertos 
+	.... numero de gaps
+
+1) se introduce el nombre de un organismo y se espera resibir la conparacion de sus transcritos frente a los transcritos de lo otor organsmo en la base de datos (porcentaje de similitud aciertos y gaps?)
+
+2)se introduce la secuencia(proteina X) entrega organismo al que pertenece y los organismo con los q se parce la proteina y las proteinas a las q se parece y el porcentage de similitud 	
+
+3)se introduce el CDP entrega la forma a la que esta asociado ese CDP 
+

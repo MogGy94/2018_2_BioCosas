@@ -1,0 +1,68 @@
+Apreciados Estudiantes,
+
+Bienvenidos al taller introductorio de sistema operativo Linux y su aplicación al
+computo científico. Por favor recuerde que se trabajará siempre en consola y puede
+tener acceso a ésta utilizando en el Menu principal de aplicaciones, accesorios y 
+luego terminal.
+
+
+Las primeras sesiones les permitiran familiarizarse con comandos de comunicación con
+el sistema operativo.
+
+No olvide que siempre requerimos escribir despues del $ el comando, luego un espacio y si 
+hay parámetros también se escriben con -. Posteriormente tendremos los argumentos, respec-
+tivos. 
+
+Por favor, recuerde siempre tener abierto dos ventanas organizadas para leer en una las
+intrucciones y en la otra tener activa una terminal para correr las instrucciones.
+
+
+
+NOTAS para el final del taller
+
+Si han logrado las actividades anteriores, es muy importante pasar al
+siguiente nivel:
+
+Las siguiente preguntas manejan un nivel de complejidad mayor. Revize las
+siguientes preguntas y analice la manera de consultar esas preguntas en grep 
+
+Qué codones no empiezan por A y luego tienen A en cualquiera de las siguientes 2 posiciones y además
+son Serinas o Tirosinas?
+
+Respuesta:
+grep "\([^A]A.\|[^A].A\),[ \t]\(Ser[a-z]*\|Tyr[a-z]*\),[ \t][A-Z]" genetic_code.txt
+
+Muy sofisticado pero tiene sentido 
+
+¿Qué codones existen que no empiezan por A?
+grep "\([^A]A.\|[^A].A\),[ \t]\([A-Za-z]*\)" genetic_code.txt
+
+Si es de su interès aprender mas acerca de expresiones regulares para el uso de grep  puede consultar en la siguiente URL, bajo el tema de clases de caracteres,en el item Character Class
+url
+
+https://www.cyberciti.biz/faq/grep-regular-expressions/
+
+Y para el tema de agrupamientos de caracteres bajo el tìtulo en inglés 
+Grouping
+url
+https://www.digitalocean.com/community/tutorials/using-grep-regular-expressions-to-search-for-text-patterns-in-linux
+
+Otras preguntas que no siempre se pueden resolver por grep pero si usando el
+lenguaje AWK
+
+Cuál es la cadena de nucleótidos delimitada por los codones de inicio AUG y el codón de parada AUU? Se traduce a  cómo fracionar una cadena usando como patron una cadena? cut de shell no lo puede hacer ya que usa 
+un caracter siempre como deimitador, entonces se debe usar otro lenguaje que se llama awk
+
+echo GGCAUGCCCCAUUCCC | awk -F"AUG|AUU" '{print $2}'
+
+awk -F 'delim' '{print $1; print $3}'
+
+Es importante hacer una pequeña intrducción a AWK, que pueden consultar en
+este link
+
+http://www.fcaglp.unlp.edu.ar/~observacional/manuales/awk.pdf
+
+
+Muchos saludos
+
+

@@ -1,0 +1,19 @@
+pregunta) tomar los 10 aminoacidos mas frecuentes en los 5 organismos y luego realizar una comparacion para verificar"" si existe una aominoacido entre los 10 mas frecuentes en cada organismo que se repita ara todos.""
+
+
+1)organizar la informacion para cada archivolverlo una columna 
+2)organizar on el campo de frecuencias de mayor a menor 
+3)seprar los 10 primeros registros mas frecuentes
+4)hacerlo para cada organismo
+5)hacer lista de aminoacidos que parecen 
+6)comparar en cuantos organismos aparecen 
+7)obtener los aminoacidos que aparecen en 2 o mas organismos
+
+Pregunta) Cuantas veces aparecen el aminoacido(ingresa el nombreo lasecuencia) X en los 5 organismos,
+
+1)hacer el script que haga el casting
+	1.1)grep en el archivo de cod_genetico y retornar la secuencia 
+2)itere en los archivos y busque la secuencia de interes 
+3)salida la frecenia del aminoacido de interes en cada uno de los organismos   
+
+

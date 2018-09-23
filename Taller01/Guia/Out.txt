@@ -1,0 +1,23 @@
+==> ../Data/genetic_code.txt <==
+GCA, Alanine, A
+GCG, Alanine, A
+GAT, Aspartate, D
+GAC, Aspartate, D
+GAA, Glutamete, E
+GAG, Glutamete, E
+GGT, Glycine, G
+GGC, Glycine, G
+GGA, Glycine, G
+GGG, Glycine, G
+
+==> ../Data/genetic_code.txt <==
+GCA, Alanine, A
+GCG, Alanine, A
+GAT, Aspartate, D
+GAC, Aspartate, D
+GAA, Glutamete, E
+GAG, Glutamete, E
+GGT, Glycine, G
+GGC, Glycine, G
+GGA, Glycine, G
+GGG, Glycine, G

@@ -1,0 +1,69 @@
+PREGUNTAS COMPLEJAS
+
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Cuales son los codones que no empiezan por A y luego tienen una A en 
+algunas de las dos siguientes posiciones. Además son Serinas o Tirosinas
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Respuesta
+
+grep "\([^A]A.\|[^A].A\),[ \t]\(Ser[a-z]*\|Tyr[a-z]*\),[ \t][A-Z]*\)" 
+
+awk -F 'delim' '{print $1; print $3}'
+ 
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''
+¿Qué codones existen que no empiezan por A?
+grep "\([^A]A.\|[^A].A\),[ \t]\([A-Za-z]*\)" genetic_code.txt
+
+´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+
+Si es de su interès aprender mas acerca de expresiones regulares para el uso de grep  puede consultar en la siguiente URL, bajo el tema de clases de caracteres,en el item Character Class
+url
+
+https://www.cyberciti.biz/faq/grep-regular-expressions/
+
+Y para el tema de agrupamientos de caracteres bajo el tìtulo en inglés 
+Grouping
+url
+https://www.digitalocean.com/community/tutorials/using-grep-regular-expressions-to-search-for-text-patterns-in-linux
+
+
+´´´´´´´´´´
+AWK
+'''''''''''
+
+Otras preguntas que no siempre se pueden resolver por grep pero si usando el
+lenguaje AWK
+
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Cuál es la cadena de nucleótidos delimitada por los codones de inicio AUG y 
+el codón de parada AUU? 
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Se traduce a  cómo fracionar una cadena usando como patron una cadena? 
+cut de shell no lo puede hacer ya que usa 
+un caracter siempre como deimitador, entonces se debe usar otro lenguaje que se llama awk
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+
+echo GGCAUGCCCCAUUCCC | awk -F"AUG|AUU" '{print $2}'
+
+
+''''''''''''''''''''''''''''''''''''''''''
+awk -F 'delim' '{print $1; print $3}'
+'''''''''''''''''''''''''''''''''''''''''
+
+
+Es importante hacer una pequeña intrducción a AWK, que pueden consultar en
+este link
+
+http://www.fcaglp.unlp.edu.ar/~observacional/manuales/awk.pdf
+
+
+
+
