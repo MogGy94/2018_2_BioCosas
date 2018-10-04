@@ -1,0 +1,5 @@
+# BLASTN 2.2.25 [Feb-01-2011]
+# Query: gi|298103671:4417-5784 Human papillomavirus type 11 complete genome, isolate LP13
+# Database: ../Data/subject01.fa
+# Fields: Query id, Subject id, % identity, alignment length, mismatches, gap openings, q. start, q. end, s. start, s. end, e-value, bit score
+gi|298103671:4417-5784	gi|298103671|emb|FN907964.1|	100.00	1368	0	0	1	1368	4417	5784	0.0	2712

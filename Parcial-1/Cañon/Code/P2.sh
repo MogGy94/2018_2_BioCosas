@@ -12,13 +12,13 @@ do
   # pasa a columna
   tr -s ')'  '\n'|
   tr -s '('  ' '|
-  grep "^."|
+  #grep "^."|
 
   #cut -d'(' -f1
   awk {'print $3" "$2" "$1'} |
    #wc
-   sort -nr |
-   head -10
+   sort -nr 
+ #  head -10
   #sort -nr
 
 done

@@ -1,0 +1,34 @@
+LABORATORIO INTRODUCCTORIO A LA COMPARACIÓN DE SECUENCIAS BIOLÓGICAS
+
+
+Primer Ejercicio
+
+--------------------------ALINEAMIENTOS UTILIZANDO MATRICES DE PUNTOS -------------
+
+Por favor ingrese a la siguiente URL 
+http://www.ac-nice.fr/svt/productions/html5/dotplot/index.htm?arn=true
+
+- Realice en primer lugar las comparaciones Metodo 1 tutorial version 1 y 2 y el ejercicio
+de la cadena la hemoglobina. hemo1.txt y hemo2.txt
+
+
+
+Segundo Ejercicio
+
+
+-------------------------ALINEAMIENTO GLOBAL IMPLEMENTADO EN PERL ---------------------
+
+En el directorio Code encuentra un archivo llamado global_alignment.pl
+
+Puede ejecutar el código usando la siguiente linea de comandos
+perl global_alignment.pl ../Data/hemo1.txt ../Data/hemo2.txt
+
+Revice la sintaxis del archivo depositado en data y el archivo 
+
+''''''''''''''''''''
+IntroPerl01.pl
+IntroPerl02.pl
+CreateMatriz.pl
+Hashesintro.pl
+''''''''''''''''''''
+
