@@ -1,0 +1,12 @@
+1  Leer Codon o fragmento ingresado por usuario 
+2 almeacenar el valor en una variable CODON
+3 Para cada archivo de datos de los organimos en la carpeta data
+4 Ordenar los codones de los organismos decendentemente por el numero de frecuencias 
+5 obtener los 10 codones mas frecuentes para cada organismo 
+6 obtener la lista de todos los codones existentes entre los 50 codones obtenidos de entre todos los organismos
+7 obtener la lista de  los codones que aparecen en mas de un organismo 
+8 bucar si el codon almacenado en CODON existe en la lista 
+9 imprimir el registro de 8)
+10 dar la opcion para ver la lista de los codones mas frecuentes 
+11.entregar lista y finalizar
+12 finalizar

@@ -1,0 +1,11 @@
+El codon CUG aparece en 5 organismos 
+El codon GUG aparece en 4 organismos 
+El codon AAG aparece en 4 organismos 
+El codon UUC aparece en 3 organismos 
+El codon GCC aparece en 3 organismos 
+El codon GAU aparece en 3 organismos 
+El codon GAG aparece en 3 organismos 
+El codon CAG aparece en 3 organismos 
+El codon AUG aparece en 3 organismos 
+El codon GAC aparece en 2 organismos 
+El codon AAA aparece en 2 organismos 

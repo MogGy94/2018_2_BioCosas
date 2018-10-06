@@ -1,0 +1,44 @@
+PARTE I GUIA de uso modulos y subrutinas para calcular Marcos Abiertos de Lectura "ORF" utilizando Perl
+
+En esta práctica los estudiantes reforzarán los conceptos aprendidos en clase
+para utilizar módulos por un lado y por otro lado ver su aplicación para 
+traducir una secuencia de DNA a proteinas. Para ello debe estudiarse el
+concepto biológico ORF  (open reading frame) ORF (ejemplo de Wikipedia u otras página de internet)
+
+Marcos abiertos de lectura: en terminos generales corresponde a la secuencia de DNA que codifica para cada una 
+de las tripletas que serán decodificadas en el proceso de traducción. 
+Los marcos abiertos de lectura se denominan +1, +2, +3, -1, -2 y -3.
+
+En un ejemplo con la secuencia 5' aactgcagtacgtaacgtca 3'
+
+
++3 5' aa   ctg cag tac gta acg tca 3'
++2 5'   a  act gca gta cgt aac gtc a   3'
++1 5' aac  tgc agt acg taa cgt ca    3'
+
+-1 3' ttg acg tca tgc att gca gt    5'
+-2 3'  tt gac gtc atg cat tgc agt   5'
+-3 3'   t tga cgt cat gca ttg cag t 5'
+
+
+En este caso se mostrarán los ejemplos de código
+utilizados para construir un ORF +1 Y son adaptados desde el 
+libro "Mastering Perl for Bioinformatics"
+Escrito por James D. Tisdall
+http://examples.oreilly.com/9780596003074/
+
+
+
+TALLER
+------------------------------------------------------------------------------
+Para los siguiente ejemplos. 
+
+1. Deben consultar cada codigo en orden y los correspondientes modulos que son necesarios para que corra la subrutina
+
+Geneticcode1.pl
+Geneticcode2.pl
+Geneticcode3.pl
+
+2. Mirar los códigos complementarios 
+hs.pl 
+substr_example.pl
